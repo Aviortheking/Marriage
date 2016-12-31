@@ -1,0 +1,22 @@
+config:
+  #time to let the player answer
+  timeout: 60
+
+messages:
+  proposition: "Dear %receiver%, \nWould you like to marry me ? \nFrom %sender%. \n(You have %time% seconds to send your answer !) \n(use '/marry accept %player%' to accept the proposition)"
+# don't touch under this !!!
+partners: #each players have the sames infos !
+  player:
+    married: false #is the player married ?
+    who: Aviortheking #name of the partner
+    home: # coords of the home
+      x: 0
+      y: 0
+      z: 0
+      world: world
+    propositions:
+      otherplayer: #other player name
+        isblocked: true #if blocked the player won't receive a proposition !
+        timeout: 60 # time before the proposition stop while at 0 the other player can reinvite if not blocked
+
+

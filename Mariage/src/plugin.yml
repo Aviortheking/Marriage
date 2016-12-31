@@ -1,0 +1,9 @@
+name: Marriage
+version: 0.1.0
+author: Delta Wings
+main: net.DeltaWings.Minecraft.Marriage.Main
+website: http://delta-wings.net/
+commands:
+  marry:
+   description: Marriage Command
+   usage: /marry
