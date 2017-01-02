@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Marriage">
+    <output-path>$PROJECT_DIR$/Mariage/tests/plugins</output-path>
+    <root id="archive" name="Marriage.jar">
+      <element id="module-output" name="Mariage" />
+      <element id="file-copy" path="$PROJECT_DIR$/Mariage/src/config.yml" />
+      <element id="file-copy" path="$PROJECT_DIR$/Mariage/src/plugin.yml" />
+    </root>
+  </artifact>
+</component>

@@ -14,10 +14,12 @@ import net.DeltaWings.Minecraft.Marriage.Main;
  */
 public class Marry implements CommandExecutor {
 
+    private Main pl;
     private FileConfiguration config;
 
     Marry(Main main) {
-        this.config = main.getConfig();
+        this.pl = main;
+        this.config = pl.getConfig();
     }
 
     @Override
@@ -25,6 +27,7 @@ public class Marry implements CommandExecutor {
         if(sender instanceof Player) {
             Player p = (Player)sender;
             if(cmd.getName().equalsIgnoreCase("marry")) {
+                // /marry <player> to ask a player to marry him/her
                 if(args.length == 1 && !args[0].equalsIgnoreCase("accept")) {
                     Boolean found = false;
                     for(Player player : Bukkit.getServer().getOnlinePlayers()) {
@@ -40,16 +43,30 @@ public class Marry implements CommandExecutor {
                         //send message "Player isn't online or is not correctly typed"
                         p.sendMessage(args[0]+" isn't online or you haven't correctly typed his/her name !");
                     }
+                // /marry accept <player>
                 } else if (args.length == 2 && args[0].equalsIgnoreCase("accept")) {
-                    if(config.getInt("partners."+p.getName()+".propositions."+args[1]+".timeout", 0) > 0) {
-                        //message you have accepted the proposition
-                        //bd %couple has been married !
-                    } else {
-                        //message the other player haven't send a proposition or the proposition is timed out !
-                    }
+                    if (!config.getString("partners." + p.getName() + ".who").equalsIgnoreCase("none"))
+                        p.sendMessage((config.getString("messages.already-married").replace("&", "§")));
+                    else if (config.getConfigurationSection("partners." + p.getName() + ".propositions").contains(args[1])) {
+                        String conf = "partners." + p.getName() + ".";
+                        config.set(conf + "who", args[1]);
+                        config.set(conf + "propositions", null);
+                        p.sendMessage(config.getString("messages.accepted"));
+                        if (config.getBoolean("config.isbroadcasted"))
+                            Bukkit.broadcastMessage(config.getString("messages.broadcast").replace("&", "§").replace("%p1%", p.getName()).replace("%p2%", args[1]));
+                    } else p.sendMessage(config.getString("messages.no-proposition").replace("%player%", args[1]).replace("&", "§"));
+                    //check si marrié
+                    //msg t'es déjà marrié sale con !
+                    //sinon check si le joueur lui a proposée
+                    //message you have accepted the proposition
+                    //bd %p1 and %p2 has been married !
+                    //sinon message le joueur ne t'a pas proposée de te marrié avc lui/elle
+                } else {
+                    p.sendMessage(config.getString("messages.miss-spell").replace("&", "§"));
                 }
             }
         }
+        pl.saveConfig();
         return true;
     }
 }
