@@ -35,10 +35,16 @@ public class Partner implements CommandExecutor {
                  */
                 if (args.length == 1 && (args[0].equalsIgnoreCase("infos") || args[0].equalsIgnoreCase("info"))) {
                     // /partner infos
+                    // check si joueur est marrié et si autre joueur en ligne
+                        // donner la vie, faim, exp de l'autre joueur
                 } else if (args.length == 1 && args[0].equalsIgnoreCase("join")) {
                     // /partner join
+                    // check si marrié et si autre joueur est en ligne
+                        // tp le joueur a lautre joueur
                 } else if (args.length == 1 && (args[0].equalsIgnoreCase("sethome") || args[0].equalsIgnoreCase("shome"))) {
                     // /partner sethome/shome
+                    // check si marrie
+                        // mettre le point de home
                 } else if (args.length == 1 && (args[0].equalsIgnoreCase("home"))) {
                     // /partner home
                 } else if (args.length == 1 && (args[0].equalsIgnoreCase("delhome") || args[0].equalsIgnoreCase("dhome"))) {
