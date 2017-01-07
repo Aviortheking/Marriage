@@ -5,6 +5,13 @@ config:
 
 messages:
   miss-spell: "&cYou have miss-spelled somethings !"
+  notMarried: You are not married
+  noHome: You don't have any home
+  tp-home: You were teleported to your home
+  tp-to: Your were teleported to your partner
+  tp-from: Your partner was teleported to you !
+  sethome: Your partner home was set !
+  homedeleted: Your home were deleted
   no-proposition: "&cThe &8%player% &chasn't sended a proposition"
   accepted: you have accepted the proposition !
   broadcast: "&c %p1% has been married with %p2% !"
