@@ -23,18 +23,10 @@ public class PlayerJoin implements Listener {
     public void onPlayerJoinEvent(PlayerJoinEvent e) {
         Player p = e.getPlayer();
         String Base = "partners."+p.getName();
-        if(!p.hasPlayedBefore()) {
-            config.createSection(Base);
-            config.createSection(Base+".who");
-            config.set(Base+".who", "none");
-            config.createSection(Base+".propositions");
-
-        } else if (!config.isSet(Base)) {
-                config.createSection(Base);
-                config.createSection(Base+".who");
-                config.set(Base+".who", "none");
-                config.createSection(Base+".propositions");
+        if (!config.isSet(Base)) {
+	        config.set(Base+".who", "none");
+	        config.createSection(Base+".propositions");
+	        pl.saveConfig();
         }
-        pl.saveConfig();
     }
 }
