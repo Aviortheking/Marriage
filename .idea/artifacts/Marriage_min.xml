@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Marriage-min">
+    <output-path>$PROJECT_DIR$/out/artifacts/Marriage_min</output-path>
+    <root id="archive" name="Marriage-min.jar">
+      <element id="module-output" name="Mariage" />
+      <element id="file-copy" path="$PROJECT_DIR$/Mariage/src/config.yml" />
+      <element id="file-copy" path="$PROJECT_DIR$/Mariage/src/plugin.yml" />
+    </root>
+  </artifact>
+</component>

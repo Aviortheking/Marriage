@@ -1,0 +1,33 @@
+config:
+  #time to let the player answer
+  isbroadcasted: true
+
+messages:
+  accepted: you have accepted the proposition !
+  already-married: "&cSorry, but you are already married with someone."
+  blocked: Sorry but you are blocked from this player
+  broadcast: "&c %p1% has been married with %p2% !"
+  miss-spell: "&cYou have miss-spelled somethings !"
+  notMarried: You are not married
+  divorced: You have divorced with %otherplayer%
+  other-divorced: %otherplayer% have divorced with you
+  noHome: You don't have any home
+  tp-home: You were teleported to your home
+  tp-to: Your were teleported to your partner
+  tp-from: Your partner was teleported to you !
+  sethome: Your partner home was set !
+  homedeleted: Your home were deleted
+  no-proposition: "&cThe &8%player% &chasn't sended a proposition"
+  proposition: Dear %receiver%, \nWould you like to marry me ? \nFrom %sender%. \n\(You have %time% seconds to send your answer !\) \n\(use '/marry accept %player%' to accept the proposition\)
+# don't touch under this !!!
+partners: #each players have the sames infos !
+  player:
+    who: none #name of the partner
+    propositions:
+      otherplayer:
+        isblocked: true
+    home: # coords of the home
+      x: 0
+      y: 0
+      z: 0
+      world: world

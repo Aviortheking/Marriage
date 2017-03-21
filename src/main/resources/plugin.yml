@@ -1,0 +1,17 @@
+name: Marriage
+version: ${project.version}
+main: delta-wings.marriage.Marriage
+prefix: [Delta-Marriage]
+authors: [Delta Wings]
+description: Advanced Marriage plugin
+website: http://delta-wings.net/
+commands:
+  marry:
+    description: Command to marry with another player. More infos on : https://gitlab.com/Delta-Wings/Minecraft-Marriage/wikis/home
+    usage: usage : /marry <arg1> [<arg2>] More infos on : https://gitlab.com/Delta-Wings/Minecraft-Marriage/wikis/home
+  partner:
+    descripion: Command to do things with your partner. More infos on : https://gitlab.com/Delta-Wings/Minecraft-Marriage/wikis/home
+    usage: /partner <info/join/sethome/home/delhome/gift/help> <args>
+  divorce:
+    description: Command to divorce with your husband/wife. More infos on : https://gitlab.com/Delta-Wings/Minecraft-Marriage/wikis/home
+    usage: /divorce
